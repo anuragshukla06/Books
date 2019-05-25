@@ -32,7 +32,10 @@ public class BooksLoader extends AsyncTaskLoader<ArrayList<BookItem>> {
     public ArrayList<BookItem> loadInBackground() {
 
         URL url = makeURL(mQueryStringURL);
+        Log.i("URL", mQueryStringURL+"test");
         String JSONStringResponse = makeConnection(url);
+        Log.i("response", JSONStringResponse);
+
         ArrayList<BookItem> bookItems = QueryUtils.getArrayList(JSONStringResponse);
 
         return  bookItems;
@@ -58,8 +61,6 @@ public class BooksLoader extends AsyncTaskLoader<ArrayList<BookItem>> {
         else {
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setConnectTimeout(1000);
-                httpURLConnection.setReadTimeout(1000);
                 httpURLConnection.setRequestMethod("GET");
 
                 int responseCode = httpURLConnection.getResponseCode();

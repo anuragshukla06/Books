@@ -16,5 +16,23 @@ public class BookItem {
         mBuyLink = buyLink;
     }
 
+    public String getTitle() {
+        return mTitle;
+    }
 
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public String getPreviewLink() {
+        return mPreviewLink;
+    }
+
+    public String getInfoLink() {
+        return mInfoLink;
+    }
+
+    public String getBuyLink() {
+        return mBuyLink;
+    }
 }
